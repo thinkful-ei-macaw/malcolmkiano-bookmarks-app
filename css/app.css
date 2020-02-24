@@ -1,0 +1,381 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: 'Rubik', sans-serif;
+  font-size: min(1.8vh, 20px);
+
+  --color1: #8A7CFF;
+  --color2: #BA81FF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  text-align: center;
+  background: linear-gradient(to bottom right, var(--color1), var(--color2));
+  color: #FFFFFF;
+  transition: all .2s ease;
+}
+
+/* =========================================== */
+/* typography styles */
+h1, h2, p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+p {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  font-size: .9rem;
+}
+
+.bookmark-content {
+  font-size: .9em;
+}
+
+.credit {
+  font-size: .8rem;
+}
+
+
+/* =========================================== */
+/* header styles */
+body > header {
+  margin: 4rem 0 2rem;
+}
+
+body > header img {
+  height: 2rem;
+  width: 2rem;
+}
+
+
+/* =========================================== */
+/* main + footer styles */
+main, .overlay .content {
+  width: 90%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+footer {
+  margin-bottom: 2rem;
+}
+
+
+/* =========================================== */
+/* greeting styles */
+#greeting {
+  margin-bottom: 4rem;
+}
+
+#greeting p {
+  font-weight: 300;
+  opacity: 0.75;
+}
+
+
+/* =========================================== */
+/* card styles */
+.card {
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  box-shadow: 0 .5rem .5rem rgba(0,0,0, 0.1);
+  border-radius: .2rem;
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.card.card-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card header {
+  margin-bottom: 0.5em;
+  padding-bottom: 1.2rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.card header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #F3F3F3;
+}
+
+.card header h2 {
+  color: var(--color1);
+}
+
+.card .content.content-empty {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #9B9B9B;
+}
+
+.card .content.content-empty img {
+  display: block;
+  opacity: 0.5;
+  height: 6rem;
+  margin-bottom: 2rem;
+}
+
+
+/* =========================================== */
+/* bookmark styles */
+.bookmark .bookmark-heading {
+  padding: 1.2em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  outline-color: var(--color1);
+}
+
+.bookmark .bookmark-heading:hover {
+  color: var(--color1);
+}
+
+.bookmark.expanded .bookmark-heading {
+  padding-bottom: .6em;
+}
+
+.bookmark.expanded:not(:last-of-type) {
+  border-bottom: 1px solid #F3F3F3;
+}
+
+.bookmark .bookmark-content {
+  padding-bottom: 1.4em;
+}
+
+.bookmark .bookmark-content p {
+  margin-bottom: 1.2em;
+}
+
+.bookmark .bookmark-content a {
+  font-weight: bold;
+  color: var(--color1);
+}
+
+.rating em {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.rating i {
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+}
+
+.rating .star {
+  background-image: url('../img/star-outline.svg');
+  background-size: 100% 100%;
+}
+
+.rating .star.star-filled {
+  background-image: url('../img/star-filled.svg');
+}
+
+
+/* =========================================== */
+/* form styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay .content {
+  width: 95%;
+  max-width: 800px;
+}
+
+.overlay form {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.overlay form .group {
+  margin: 1.2em 0;
+}
+
+.overlay form .group-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-centered button {
+  flex: 1;
+}
+
+.overlay form label:not(.star) {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .overlay {
+    justify-content: center;
+  }
+
+  .overlay form {
+    border-radius: .2rem;
+  }
+}
+
+
+/* =========================================== */
+/* button styles */
+button {
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  outline-color: var(--color1);
+  border-radius: .2rem;
+  background-image: linear-gradient(to right, var(--color1), var(--color2));
+  background-size: 300% 100%;
+  background-position: center left;
+  color: #FFFFFF;
+  padding: .8em 1em;
+  transition: all .2s ease;
+}
+
+button.btn-alt {
+  background-image: linear-gradient(to right, #232526, #414345);
+}
+
+button:not(:last-of-type) {
+  margin-right: 1em;
+}
+
+button:hover {
+  background-position: center right;
+}
+
+button:active {
+  background-position: center center;
+}
+
+
+/* =========================================== */
+/* input styles */
+input[type=text],
+input[type=url],
+textarea {
+  width: 100%;
+  padding: 0.5em;
+  resize: none;
+  outline-color: var(--color1);
+  border: 1px solid #EEEEEE;
+  border-radius: .2rem;
+  background: #FFFFFF;
+}
+
+::placeholder {
+  color: #9B9B9B;
+}
+
+select {
+  font-weight: 300;
+  border: none;
+  outline-color: var(--color1);
+  text-transform: uppercase;
+  color: #9B9B9B;
+}
+
+
+/* =========================================== */
+/* star styles */
+.star-rating {
+  display: flex;
+  font-size: 2rem;
+  margin-bottom: 1em;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.star-rating span,
+.star-rating input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star-rating .star {
+  display: block;
+  cursor: pointer;
+  background-image: url('../img/star-outline.svg');
+  background-size: 100% 100%;
+  height: 1em;
+  width: 1em;
+  opacity: 0.8;
+  transition: all .2s ease;
+}
+
+.star-rating .star:hover,
+.star-rating:hover .star:hover,
+.star-rating :checked ~ .star,
+.star-rating .star:hover ~ .star {
+  background-image: url('../img/star-filled.svg');
+}
+
+.star-rating:hover .star {
+  background-image: url('../img/star-outline.svg');
+}
+
+
+/* =========================================== */
+/* credit styles */
+.credit img {
+  display: inline-block;
+  height: 1em;
+  margin: 0 .2em;
+  position: relative;
+  top: .1em;
+  z-index: -1;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Viungo - Organize your bookmarks</title>
+  <meta name="description" content="A simple list of all your bookmarks.">
+  <meta name="author" content="Malcolm Kiano">
+
+  <link rel="shortcut icon" href="../favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  
+  <header>
+    <h1><img src="../img/logo-transparent.svg" alt="Viungo"></h1>
+  </header>
+
+  <main>
+
+    <section id="greeting">
+      <h1>Good Morning!</h1>
+      <p>It's a great time to surf the web.</p>
+    </section>
+
+    <section class="card card-flex">
+      <article class="content">
+        <h2>Found a cool link?</h2>
+        <p>Let me remember that.</p>
+      </article>
+      <button id="addBookmark" class="btn-alt">Add bookmark</button>
+    </section>
+
+    <section class="card">
+      <header>
+        <h2>Bookmarks</h2>
+        <select name="filter" id="filter">
+          <option value="">ALL</option>
+          <option value="2">2+ stars</option>
+          <option value="3">3+ stars</option>
+          <option value="4">4+ stars</option>
+          <option value="5">5 stars</option>
+        </select>
+      </header>
+
+      <article class="content">
+        <div class="bookmark expanded">
+          <a href="#" class="bookmark-heading">
+            <h2>GitHub</h2>
+            <div class="rating">
+              <em>4 stars</em>
+              <i class="star star-filled"></i>
+              <i class="star star-filled"></i>
+              <i class="star star-filled"></i>
+              <i class="star star-filled"></i>
+              <i class="star"></i>
+            </div>
+          </a>
+          <div class="bookmark-content">
+            <p>
+              GitHub is where people build software. More than 40 million people use GitHub to discover, fork, and contribute to over 100 million projects.
+            </p>
+            <a href="https://github.com" target="_blank">Visit website</a>
+          </div>
+        </div>
+
+        <div class="bookmark">
+          <a href="#" class="bookmark-heading">
+            <h2>Thinkful Dashboard</h2>
+            <div class="rating">
+              <em>5 stars</em>
+              <i class="star star-filled"></i>
+              <i class="star star-filled"></i>
+              <i class="star star-filled"></i>
+              <i class="star star-filled"></i>
+              <i class="star star-filled"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="bookmark">
+          <a href="#" class="bookmark-heading">
+            <h2>Minecraft on Reddit</h2>
+            <div class="rating">
+              <em>3 stars</em>
+              <i class="star star-filled"></i>
+              <i class="star star-filled"></i>
+              <i class="star star-filled"></i>
+              <i class="star"></i>
+              <i class="star"></i>
+            </div>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <section class="overlay">
+      <article class="content">
+        <form class="card">
+          <header>
+            <h2>Add A Bookmark</h2>
+          </header>
+          <div class="group">
+            <label for="title">Website Title:</label>
+            <input required type="text" id="title" name="title" autocomplete="off" placeholder="The Greatest Website Ever">
+          </div>
+          <div class="group">
+            <label for="url">Website URL:</label>
+            <input required type="url" id="url" name="url" autocomplete="off" placeholder="https://omg.thegreatestwebsiteever.com">
+          </div>
+          <div class="group">
+            <label for="description">Website Description:</label>
+            <textarea required id="description" name="description" rows="3" maxlength="140" placeholder="Lots and lots of text describing the website that we all know nobody will read but is important to have."></textarea>
+          </div>
+          <div class="group">
+            <label for="rating">Rating:</label>
+            <div class="star-rating">
+              <input id="star5" type="radio" name="rating" value="5">
+              <label for="star5" class="star"><span>5 stars</span></label>
+              <input id="star4" type="radio" name="rating" value="4">
+              <label for="star4" class="star"><span>4 stars</span></label>
+              <input id="star3" checked type="radio" name="rating" value="3">
+              <label for="star3" class="star"><span>3 stars</span></label>
+              <input id="star2" type="radio" name="rating" value="2">
+              <label for="star2" class="star"><span>2 stars</span></label>
+              <input id="star1" type="radio" name="rating" value="1">
+              <label for="star1" class="star"><span>1 star</span></label>
+            </div>  
+          </div>
+          <div class="group group-centered">
+            <button>Add bookmark</button>
+            <button id="cancelAdd" class="btn-alt">Cancel</button>  
+          </div>
+        </form>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="credit">Developed with <img src="../img/heart.svg" alt="love"> by Malcolm Kiano.</p>
+  </footer>
+
+</body>
+</html>
