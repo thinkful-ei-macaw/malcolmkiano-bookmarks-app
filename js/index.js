@@ -239,13 +239,16 @@ function generateBookmarksHTML(){
   let filterControl = '';
   if (store.bookmarks.length > 0){
     filterControl = `
-    <select name="filter" id="filter">
-      <option ${store.filter === 1 ? 'selected' : ''} value="1">ALL</option>
-      <option ${store.filter === 2 ? 'selected' : ''} value="2">2+ stars</option>
-      <option ${store.filter === 3 ? 'selected' : ''} value="3">3+ stars</option>
-      <option ${store.filter === 4 ? 'selected' : ''} value="4">4+ stars</option>
-      <option ${store.filter === 5 ? 'selected' : ''} value="5">5 stars</option>
-    </select>
+    <div class="group">
+      <label for="filter">Showing:</label>
+      <select name="filter" id="filter">
+        <option value="">ALL</option>
+        <option value="2">2+ stars</option>
+        <option value="3">3+ stars</option>
+        <option value="4">4+ stars</option>
+        <option value="5">5 stars</option>
+      </select>
+    </div>
     `;
   }
 

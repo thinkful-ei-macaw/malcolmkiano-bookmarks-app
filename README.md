@@ -21,5 +21,5 @@ Links to wireframes:
 - [x] Test again
 - [x] Enable bookmark editing
 - [x] Add background color animation
-- [ ] TEST TEST TEST
-- [ ] SHIP!
+- [x] TEST TEST TEST
+- [x] SHIP!
