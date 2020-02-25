@@ -20,7 +20,6 @@ body {
   background-size: 400% 400%;
   animation: swoosh 10s ease infinite;
   color: #FFFFFF;
-  transition: all .2s ease;
 }
 
 @keyframes swoosh {
@@ -136,7 +135,7 @@ footer {
 }
 
 .card header h2 {
-  color: var(--color2);
+  color: var(--color1);
 }
 
 .card .content.content-empty {
@@ -165,7 +164,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid transparent;
-  outline-color: var(--color2);
+  outline-color: var(--color1);
 }
 
 .bookmark .bookmark-heading h2 {
@@ -176,7 +175,7 @@ footer {
 }
 
 .bookmark .bookmark-heading:hover {
-  color: var(--color2);
+  color: var(--color1);
 }
 
 .bookmark.expanded .bookmark-heading {
@@ -203,11 +202,31 @@ footer {
   display: inline-block;
   font-weight: bold;
   margin-right: 1em;
-  color: var(--color2);
+  color: var(--color1);
 }
 
-.bookmark .bookmark-content .delete {
-  color: red;
+.bookmark-content .links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookmark-content .links a {
+  opacity: 0.75;
+  transition: all .2s ease;
+}
+
+.bookmark-content .links a:hover {
+  opacity: 1;
+}
+
+.bookmark-content .links img{
+  height: 1em;
+  width: 1em;
+}
+
+.bookmark-content .links a:last-of-type {
+  margin-right: 0;
 }
 
 .bookmark .bookmark-content a:hover {
@@ -322,7 +341,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   border: none;
-  outline-color: var(--color2);
+  outline-color: var(--color1);
   border-radius: .2rem;
   background-image: linear-gradient(to right, var(--color1), var(--color2));
   background-size: 300% 100%;
@@ -357,7 +376,7 @@ textarea {
   width: 100%;
   padding: 0.5em;
   resize: none;
-  outline-color: var(--color2);
+  outline-color: var(--color1);
   border: 1px solid #EEEEEE;
   border-radius: .2rem;
   background: #FFFFFF;
@@ -370,7 +389,7 @@ textarea {
 select {
   font-weight: 300;
   border: none;
-  outline-color: var(--color2);
+  outline-color: var(--color1);
   text-transform: uppercase;
   color: #9B9B9B;
 }
