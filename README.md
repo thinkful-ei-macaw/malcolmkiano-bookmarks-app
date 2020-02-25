@@ -1,5 +1,5 @@
 # Bookmarks App
-Live app: _coming soon_.
+Live app: [DEMO HERE!](https://thinkful-ei-macaw.github.io/malcolmkiano-bookmarks-app/)
 
 Links to wireframes:
 - [Default View](https://thinkful-ei-macaw.github.io/malcolmkiano-bookmarks-app/wireframes/default.html)
@@ -12,9 +12,9 @@ Links to wireframes:
 - [x] Create HTML wireframes
 - [x] Style the wireframes using CSS
 - [x] Code the STORE module
-- [ ] Code the API module
+- [x] Code the API module
 - [x] Code all the listener functions as well as render functions (app)
-- [ ] Test the app & get feedback
+- [x] Test the app & get feedback
 - [ ] Apply any changes to app
 - [ ] Test again
 - [ ] SHIP!

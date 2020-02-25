@@ -23,7 +23,7 @@ body {
 
 /* =========================================== */
 /* typography styles */
-h1, h2, p {
+h1, h2, h3, p {
   margin: 0;
 }
 
@@ -161,12 +161,23 @@ footer {
   outline-color: var(--color1);
 }
 
+.bookmark .bookmark-heading h2 {
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .bookmark .bookmark-heading:hover {
   color: var(--color1);
 }
 
 .bookmark.expanded .bookmark-heading {
   padding-bottom: .6em;
+}
+
+.bookmark.expanded .bookmark-heading h2 {
+  white-space: normal;
 }
 
 .bookmark.expanded:not(:last-of-type) {
@@ -190,6 +201,10 @@ footer {
 
 .bookmark .bookmark-content .delete {
   color: red;
+}
+
+.rating {
+  white-space: nowrap;
 }
 
 .rating em {
@@ -253,10 +268,6 @@ footer {
   justify-content: center;
 }
 
-.group-centered button {
-  flex: 1;
-}
-
 .overlay form label:not(.star) {
   display: block;
   margin-bottom: 0.5em;
@@ -270,6 +281,27 @@ footer {
   .overlay form {
     border-radius: .2rem;
   }
+}
+
+
+/* =========================================== */
+/* error styles */
+.error {
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+  position: relative;
+  background: #FFDDDD;
+  border: 1px solid #FF8888;
+}
+
+.error a {
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  font-size: 0.8em;
+  text-decoration: underline;
+  transform: translateY(-50%);
+  text-align: right;
 }
 
 
@@ -384,4 +416,8 @@ select {
   position: relative;
   top: .1em;
   z-index: -1;
+}
+
+.credit a {
+  text-decoration: underline;
 }
