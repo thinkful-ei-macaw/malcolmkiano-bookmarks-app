@@ -27,7 +27,10 @@ function serializeJson(form){
 }
 
 function setup(){
-  // get items and render
+  // initial render so that page isn't blank
+  render();
+
+  // get items and render again
   api.getItems()
     .then(bookmarks => {
       bookmarks.forEach(bookmark => store.addBookmark(bookmark));
