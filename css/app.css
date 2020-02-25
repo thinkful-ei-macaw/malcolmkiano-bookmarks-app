@@ -17,15 +17,8 @@ body {
   user-select: none;
   text-align: center;
   background-image: linear-gradient(to bottom right, var(--color1), var(--color2));
-  background-size: 400% 400%;
   animation: swoosh 10s ease infinite;
   color: #FFFFFF;
-}
-
-@keyframes swoosh {
-  0% { background-position:0% 50% }
-  50% { background-position:100% 50% }
-  100% { background-position:0% 50% }
 }
 
 /* =========================================== */

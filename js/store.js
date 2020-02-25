@@ -1,16 +1,24 @@
 let bookmarks = [];
 let adding = false;
+let editing = null;
 let filter = 1;
 let error = null;
+
+function findById(id){
+  let foundBookmark = this.bookmarks.find(bookmark => bookmark.id === id);
+  return foundBookmark;
+}
 
 function addBookmark(newBookmark){
   newBookmark.expanded = false;
   this.bookmarks.push(newBookmark);
 }
 
-function findById(id){
-  let foundBookmark = this.bookmarks.find(bookmark => bookmark.id === id);
-  return foundBookmark;
+
+function editBookmark(id, data){
+  let foundBookmark = this.findById(id);
+  let parsed = JSON.parse(data);
+  Object.assign(foundBookmark, parsed);
 }
 
 function deleteBookmark(id){
@@ -21,9 +29,11 @@ function deleteBookmark(id){
 export default {
   bookmarks,
   adding,
+  editing,
   filter,
   error,
-  addBookmark,
   findById,
+  addBookmark,
+  editBookmark,
   deleteBookmark
 };

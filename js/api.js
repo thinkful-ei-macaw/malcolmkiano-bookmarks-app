@@ -34,6 +34,14 @@ function addItem(newItem){
   });
 }
 
+function editItem(id, data){
+  return doFetch(BASE_URL + '/' + id, {
+    method: 'PATCH',
+    headers: {'Content-Type': 'application/json'},
+    body: data
+  });
+}
+
 function deleteItem(id){
   return doFetch(BASE_URL + '/' + id, {
     method: 'DELETE'
@@ -43,5 +51,6 @@ function deleteItem(id){
 export default {
   getItems,
   addItem,
+  editItem,
   deleteItem
 };
