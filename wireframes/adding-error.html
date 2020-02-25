@@ -46,7 +46,7 @@
       </header>
 
       <article class="content">
-        <div class="bookmark">
+        <div class="bookmark expanded">
           <a href="#" class="bookmark-heading">
             <h2>GitHub</h2>
             <div class="rating">
@@ -58,6 +58,12 @@
               <i class="star"></i>
             </div>
           </a>
+          <div class="bookmark-content">
+            <p>
+              GitHub is where people build software. More than 40 million people use GitHub to discover, fork, and contribute to over 100 million projects.
+            </p>
+            <a href="https://github.com" target="_blank">Visit website</a>
+          </div>
         </div>
 
         <div class="bookmark">
@@ -90,23 +96,74 @@
       </article>
     </section>
 
+    <section class="overlay">
+      <article class="content">
+        <form class="card">
+          <header>
+            <h2>Add A Bookmark</h2>
+          </header>
+          
+          <div class="error">
+            <h3>Oops! Something went wrong.</h3>
+            <p><strong>404</strong> - The resource was not found.</p>
+            <a href="#" id="closeError">dismiss</a>
+          </div>
+
+          <div class="group">
+            <label for="title">Website Title:</label>
+            <input required type="text" id="title" name="title" autocomplete="off" placeholder="The Greatest Website Ever">
+          </div>
+          <div class="group">
+            <label for="url">Website URL:</label>
+            <input required type="url" id="url" name="url" autocomplete="off" placeholder="https://omg.thegreatestwebsiteever.com">
+          </div>
+          <div class="group">
+            <label for="description">Website Description:</label>
+            <textarea required id="description" name="description" rows="3" maxlength="140" placeholder="Lots and lots of text describing the website that we all know nobody will read but is important to have."></textarea>
+          </div>
+          <div class="group">
+            <label for="rating">Rating:</label>
+            <div class="star-rating">
+              <input id="star5" type="radio" name="rating" value="5">
+              <label for="star5" class="star"><span>5 stars</span></label>
+              <input id="star4" type="radio" name="rating" value="4">
+              <label for="star4" class="star"><span>4 stars</span></label>
+              <input id="star3" checked type="radio" name="rating" value="3">
+              <label for="star3" class="star"><span>3 stars</span></label>
+              <input id="star2" type="radio" name="rating" value="2">
+              <label for="star2" class="star"><span>2 stars</span></label>
+              <input id="star1" type="radio" name="rating" value="1">
+              <label for="star1" class="star"><span>1 star</span></label>
+            </div>  
+          </div>
+          <div class="group group-centered">
+            <button>Add bookmark</button>
+            <button id="cancelAdd" class="btn-alt">Cancel</button>  
+          </div>
+        </form>
+      </article>
+    </section>
+
   </main>
 
   <footer>
     <p class="credit">Developed with <img src="../img/heart.svg" alt="love"> by Malcolm Kiano.</p>
   </footer>
 
-  <button id="showCode">
-    &lt;/&gt;
-  </button>
-  
+<button id="showCode">
+  &lt;/&gt;
+</button>
+
 <pre id="codeSection">
 <code>const store = {
   bookmarks: [...],
-  adding: false,
+  adding: true,
   editing: null,
   filter: 1,
-  error: null
+  error: {
+    code: 404,
+    message: 'The resource was not found'
+  }
 }</code>
 </pre>
 

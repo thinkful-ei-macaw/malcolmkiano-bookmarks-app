@@ -444,3 +444,33 @@ select {
 .credit a {
   text-decoration: underline;
 }
+
+
+/* =========================================== */
+/* wireframe specific styles */
+#showCode {
+  background: #000000;
+  color: #FFFFFF;
+  font-size: .6rem;
+  padding: 1em 1em .9em;
+  position: fixed;
+  z-index: 0;
+  top: 1rem;
+  right: 1rem;
+}
+
+#codeSection {
+  position: fixed;
+  display: none;
+  top: 2.5rem;
+  right: 1rem;
+  text-align-last: left;
+  padding: 1rem;
+  background: #FFFFFF;
+  color: #000000;
+  box-shadow: 0 .5em .5em rgba(0,0,0,0.2);
+}
+
+#codeSection.active {
+  display: block;
+}

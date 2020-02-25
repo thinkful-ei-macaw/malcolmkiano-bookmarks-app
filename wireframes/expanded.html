@@ -108,5 +108,30 @@
     <p class="credit">Developed with <img src="../img/heart.svg" alt="love"> by Malcolm Kiano.</p>
   </footer>
 
+<button id="showCode">
+  &lt;/&gt;
+</button>
+
+<pre id="codeSection">
+<code>const store = {
+  bookmarks: [...,
+    {
+      id: '...'
+      title: 'GitHub',
+      url: 'https://www.github.com',
+      desc: 'GitHub is where...',
+      expanded: true
+    }
+  ],
+  adding: true,
+  editing: null,
+  filter: 1,
+  error: null
+}</code>
+</pre>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="module" src="wireframe.js"></script>
+
 </body>
 </html>

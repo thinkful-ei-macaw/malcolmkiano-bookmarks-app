@@ -45,8 +45,14 @@
         </select>
       </header>
 
+      <div class="error">
+        <h3>Oops! Something went wrong.</h3>
+        <p><strong>404</strong> - The resource was not found.</p>
+        <a href="#" id="closeError">dismiss</a>
+      </div>
+
       <article class="content">
-        <div class="bookmark">
+        <div class="bookmark expanded">
           <a href="#" class="bookmark-heading">
             <h2>GitHub</h2>
             <div class="rating">
@@ -58,6 +64,18 @@
               <i class="star"></i>
             </div>
           </a>
+          <div class="bookmark-content">
+            <p>
+              GitHub is where people build software. More than 40 million people use GitHub to discover, fork, and contribute to over 100 million projects.
+            </p>
+            <div class="links">
+              <a href="https://github.com" target="_blank">Visit website</a>
+              <div class="icons">
+                <a href="#" title="Edit bookmark" class="edit"><img src="../img/edit.svg" alt="edit bookmark"></a>
+                <a href="#" title="Delete bookmark" class="delete"><img src="../img/delete.svg" alt="delete bookmark"></a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="bookmark">
@@ -96,17 +114,28 @@
     <p class="credit">Developed with <img src="../img/heart.svg" alt="love"> by Malcolm Kiano.</p>
   </footer>
 
-  <button id="showCode">
-    &lt;/&gt;
-  </button>
-  
+<button id="showCode">
+  &lt;/&gt;
+</button>
+
 <pre id="codeSection">
 <code>const store = {
-  bookmarks: [...],
-  adding: false,
+  bookmarks: [...,
+    {
+      id: '...'
+      title: 'GitHub',
+      url: 'https://www.github.com',
+      desc: 'GitHub is where...',
+      expanded: true
+    }
+  ],
+  adding: true,
   editing: null,
   filter: 1,
-  error: null
+  error: {
+    code: 404,
+    message: 'The resource was not found'
+  }
 }</code>
 </pre>
 
