@@ -11,9 +11,9 @@ Links to wireframes:
 - [x] Design the app
 - [x] Create HTML wireframes
 - [x] Style the wireframes using CSS
-- [ ] Code the STORE module
+- [x] Code the STORE module
 - [ ] Code the API module
-- [ ] Code all the listener functions as well as render functions (app)
+- [x] Code all the listener functions as well as render functions (app)
 - [ ] Test the app & get feedback
 - [ ] Apply any changes to app
 - [ ] Test again
