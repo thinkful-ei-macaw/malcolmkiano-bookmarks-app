@@ -2,6 +2,7 @@
 
 // ===============================================================
 // imports
+import api from './api.js';
 import store from './store.js';
 
 
@@ -14,7 +15,14 @@ function init(){
   handleBookmarkDeleteClick();
   handleBookmarkSubmit();
   handleCancelAddClick();
-  render();
+  
+  // get items and render
+  api.getItems()
+    .then(bookmarks => {
+      bookmarks.forEach(bookmark => store.addBookmark(bookmark));
+      render();
+    });
+
 }
 
 function serializeJson(form){
@@ -59,8 +67,11 @@ function handleBookmarkDeleteClick(){
   $('main').on('click', '.bookmark-content .delete', function(e){
     e.preventDefault();
     let id = $(e.currentTarget).closest('.bookmark').data('id');
-    store.deleteBookmark(id);
-    render();
+    api.deleteItem(id)
+      .then(() => {
+        store.deleteBookmark(id);
+        render();
+      });
   });
 }
 
@@ -71,10 +82,12 @@ function handleBookmarkSubmit(){
     let form = $('main').find('#addForm')[0];
     let data = serializeJson(form);
     
-    // do stuff with the api
-    
-    store.adding = false;
-    render();
+    api.addItem(data)
+      .then(data => {
+        store.addBookmark(data);
+        store.adding = false;
+        render();
+      });
   });
 }
 
@@ -192,7 +205,7 @@ function generateBookmarksContentHTML(){
         innerContent = `
         <div class="bookmark-content">
           <p>
-            ${bookmark.description}
+            ${bookmark.desc}
           </p>
           <a href="${bookmark.url}" target="_blank">Visit website</a>
           <a href="#" class="delete">Delete bookmark</a>
@@ -202,8 +215,8 @@ function generateBookmarksContentHTML(){
 
       html += `
       <div data-id="${bookmark.id}" class="bookmark ${bookmark.expanded === true ? 'expanded' : ''}">
-        <a href="#" class="bookmark-heading" title="${bookmark.expanded === true ? 'Click to collapse' : 'Click to expand'}">
-          <h2>${bookmark.title}</h2>
+        <a href="#" class="bookmark-heading">
+          <h2 title="${bookmark.expanded === true ? 'Click to collapse' : 'Click to expand'}">${bookmark.title}</h2>
           <div class="rating">
             <em>${bookmark.rating} star${bookmark.rating !== 1 ? 's' : ''}</em>
             ${starContent}
@@ -237,8 +250,8 @@ function generateAddBookmarkFormHTML(){
             <input required type="url" id="url" name="url" autocomplete="off" placeholder="https://omg.thegreatestwebsiteever.com">
           </div>
           <div class="group">
-            <label for="description">Website Description:</label>
-            <textarea required id="description" name="description" rows="3" maxlength="140" placeholder="Lots and lots of text describing the website that we all know nobody will read but is important to have."></textarea>
+            <label for="desc">Website Description:</label>
+            <textarea required id="desc" name="desc" rows="3" maxlength="140" placeholder="Lots and lots of text describing the website that we all know nobody will read but is important to have."></textarea>
           </div>
           <div class="group">
             <label for="rating">Rating:</label>
