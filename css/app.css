@@ -16,9 +16,17 @@ body {
   padding: 0;
   user-select: none;
   text-align: center;
-  background: linear-gradient(to bottom right, var(--color1), var(--color2));
+  background-image: linear-gradient(to bottom right, var(--color1), var(--color2));
+  background-size: 400% 400%;
+  animation: swoosh 10s ease infinite;
   color: #FFFFFF;
   transition: all .2s ease;
+}
+
+@keyframes swoosh {
+  0% { background-position:0% 50% }
+  50% { background-position:100% 50% }
+  100% { background-position:0% 50% }
 }
 
 /* =========================================== */
@@ -74,9 +82,8 @@ main, .overlay .content {
 }
 
 footer {
-  margin-bottom: 2rem;
+  padding-bottom: 4rem;
 }
-
 
 /* =========================================== */
 /* greeting styles */
@@ -129,7 +136,7 @@ footer {
 }
 
 .card header h2 {
-  color: var(--color1);
+  color: var(--color2);
 }
 
 .card .content.content-empty {
@@ -158,7 +165,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid transparent;
-  outline-color: var(--color1);
+  outline-color: var(--color2);
 }
 
 .bookmark .bookmark-heading h2 {
@@ -169,7 +176,7 @@ footer {
 }
 
 .bookmark .bookmark-heading:hover {
-  color: var(--color1);
+  color: var(--color2);
 }
 
 .bookmark.expanded .bookmark-heading {
@@ -196,11 +203,15 @@ footer {
   display: inline-block;
   font-weight: bold;
   margin-right: 1em;
-  color: var(--color1);
+  color: var(--color2);
 }
 
 .bookmark .bookmark-content .delete {
   color: red;
+}
+
+.bookmark .bookmark-content a:hover {
+  text-decoration: underline;
 }
 
 .rating {
@@ -311,7 +322,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   border: none;
-  outline-color: var(--color1);
+  outline-color: var(--color2);
   border-radius: .2rem;
   background-image: linear-gradient(to right, var(--color1), var(--color2));
   background-size: 300% 100%;
@@ -346,7 +357,7 @@ textarea {
   width: 100%;
   padding: 0.5em;
   resize: none;
-  outline-color: var(--color1);
+  outline-color: var(--color2);
   border: 1px solid #EEEEEE;
   border-radius: .2rem;
   background: #FFFFFF;
@@ -359,7 +370,7 @@ textarea {
 select {
   font-weight: 300;
   border: none;
-  outline-color: var(--color1);
+  outline-color: var(--color2);
   text-transform: uppercase;
   color: #9B9B9B;
 }

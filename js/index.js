@@ -16,7 +16,17 @@ function init(){
   handleBookmarkSubmit();
   handleCancelAddClick();
   handleDismissErrorClick();
-  
+  setup();
+}
+
+function serializeJson(form){
+  let rawData = new FormData(form);
+  let parsed = {};
+  rawData.forEach((val, name) => parsed[name] = val);
+  return JSON.stringify(parsed);
+}
+
+function setup(){
   // get items and render
   api.getItems()
     .then(bookmarks => {
@@ -27,14 +37,6 @@ function init(){
       store.error = error;
       render();
     });
-
-}
-
-function serializeJson(form){
-  let rawData = new FormData(form);
-  let parsed = {};
-  rawData.forEach((val, name) => parsed[name] = val);
-  return JSON.stringify(parsed);
 }
 
 
