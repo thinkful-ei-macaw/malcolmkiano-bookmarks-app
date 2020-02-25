@@ -16,6 +16,7 @@ function doFetch(...params){
     .then(data => {
       if (error) {
         error.message = data.message;
+        return Promise.reject(error);
       }
 
       return data;

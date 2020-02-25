@@ -242,11 +242,11 @@ function generateBookmarksHTML(){
     <div class="group">
       <label for="filter">Showing:</label>
       <select name="filter" id="filter">
-        <option value="">ALL</option>
-        <option value="2">2+ stars</option>
-        <option value="3">3+ stars</option>
-        <option value="4">4+ stars</option>
-        <option value="5">5 stars</option>
+        <option ${store.filter === 1 ? 'selected' : ''} value="1">ALL</option>
+        <option ${store.filter === 2 ? 'selected' : ''} value="2">2+ stars</option>
+        <option ${store.filter === 3 ? 'selected' : ''} value="3">3+ stars</option>
+        <option ${store.filter === 4 ? 'selected' : ''} value="4">4+ stars</option>
+        <option ${store.filter === 5 ? 'selected' : ''} value="5">5 stars</option>
       </select>
     </div>
     `;
@@ -405,11 +405,11 @@ function generateEditBookmarkFormHTML(){
 
           <div class="group">
             <label for="title">Website Title:</label>
-            <input required type="text" id="title" name="title" autocomplete="off" placeholder="The Greatest Website Ever" value="${bookmark.title}">
+            <input required readonly type="text" id="title" name="title" autocomplete="off" placeholder="The Greatest Website Ever" value="${bookmark.title}">
           </div>
           <div class="group">
             <label for="url">Website URL:</label>
-            <input required type="url" id="url" name="url" autocomplete="off" placeholder="https://omg.thegreatestwebsiteever.com" value="${bookmark.url}">
+            <input required readonly type="url" id="url" name="url" autocomplete="off" placeholder="https://omg.thegreatestwebsiteever.com" value="${bookmark.url}">
           </div>
           <div class="group">
             <label for="desc">Website Description:</label>
