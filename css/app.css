@@ -448,29 +448,49 @@ select {
 
 /* =========================================== */
 /* wireframe specific styles */
-#showCode {
-  background: #000000;
-  color: #FFFFFF;
-  font-size: .6rem;
-  padding: 1em 1em .9em;
+.wf-buttons {
   position: fixed;
   z-index: 0;
   top: 1rem;
   right: 1rem;
 }
 
-#codeSection {
+.wf-buttons button {
+  background: #000000;
+  color: #FFFFFF;
+  font-size: .6rem;
+  padding: 1em 1em .9em;
+}
+
+#wf-links {
+  list-style: none;
+}
+
+#wf-links li {
+  margin-bottom: 0.5em;
+}
+
+#wf-links a {
+  color: var(--color1);
+}
+
+#wf-links a:hover {
+  text-decoration: underline;
+}
+
+#codeSection, #wf-links {
   position: fixed;
   display: none;
   top: 2.5rem;
   right: 1rem;
-  text-align-last: left;
+  text-align: left;
   padding: 1rem;
   background: #FFFFFF;
   color: #000000;
   box-shadow: 0 .5em .5em rgba(0,0,0,0.2);
 }
 
-#codeSection.active {
+#codeSection.active,
+#wf-links.active {
   display: block;
 }

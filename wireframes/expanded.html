@@ -105,12 +105,31 @@
   </main>
 
   <footer>
-    <p class="credit">Developed with <img src="../img/heart.svg" alt="love"> by Malcolm Kiano.</p>
+    <p class="credit">
+      Developed with <img src="../img/heart.svg" alt="love"> by 
+      <a href="https://github.com/malcolmkiano" target="_blank">Malcolm Kiano</a>.
+    </p>
   </footer>
 
-<button id="showCode">
-  &lt;/&gt;
-</button>
+<!-- wireframe nav and code displaying -->
+<div class="wf-buttons">
+  <button id="showLinks">
+    links
+  </button>
+
+  <button id="showCode">
+    &lt;/&gt;
+  </button>
+</div>
+
+<ul id="wf-links">
+  <li><a href="empty-state.html">Empty State</a></li>
+  <li><a href="default.html">Default View</a></li>
+  <li><a href="expanded.html">Expanded View</a></li>
+  <li><a href="expanded-error.html">Expanded View (error)</a></li>
+  <li><a href="adding.html">Adding View</a></li>
+  <li><a href="adding-error">Adding View (error)</a></li>
+</ul>
 
 <pre id="codeSection">
 <code>const store = {
@@ -120,10 +139,11 @@
       title: 'GitHub',
       url: 'https://www.github.com',
       desc: 'GitHub is where...',
+      rating: 4,
       expanded: true
     }
   ],
-  adding: true,
+  adding: false,
   editing: null,
   filter: 1,
   error: null
