@@ -11,6 +11,7 @@ function init(){
   handleAddBookmarkClick();
   handleFilterChange();
   handleBookmarkClick();
+  handleBookmarkDeleteClick();
   handleBookmarkSubmit();
   handleCancelAddClick();
   render();
@@ -54,6 +55,15 @@ function handleBookmarkClick(){
   });
 }
 
+function handleBookmarkDeleteClick(){
+  $('main').on('click', '.bookmark-content .delete', function(e){
+    e.preventDefault();
+    let id = $(e.currentTarget).closest('.bookmark').data('id');
+    store.deleteBookmark(id);
+    render();
+  });
+}
+
 function handleBookmarkSubmit(){
   $('main').on('submit', '#addForm', function(e){
     e.preventDefault();
@@ -62,7 +72,7 @@ function handleBookmarkSubmit(){
     let data = serializeJson(form);
     
     // do stuff with the api
-
+    
     store.adding = false;
     render();
   });
@@ -185,6 +195,7 @@ function generateBookmarksContentHTML(){
             ${bookmark.description}
           </p>
           <a href="${bookmark.url}" target="_blank">Visit website</a>
+          <a href="#" class="delete">Delete bookmark</a>
         </div>
         `;
       }

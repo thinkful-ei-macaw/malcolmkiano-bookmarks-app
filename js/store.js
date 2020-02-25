@@ -13,11 +13,17 @@ function findById(id){
   return foundBookmark;
 }
 
+function deleteBookmark(id){
+  let foundBookmark = this.findById(id);
+  this.bookmarks.splice(this.bookmarks.indexOf(foundBookmark), 1);
+}
+
 export default {
   bookmarks,
   adding,
   filter,
   error,
   addBookmark,
-  findById
+  findById,
+  deleteBookmark
 };

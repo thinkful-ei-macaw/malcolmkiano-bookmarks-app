@@ -182,8 +182,14 @@ footer {
 }
 
 .bookmark .bookmark-content a {
+  display: inline-block;
   font-weight: bold;
+  margin-right: 1em;
   color: var(--color1);
+}
+
+.bookmark .bookmark-content .delete {
+  color: red;
 }
 
 .rating em {
