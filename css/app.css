@@ -192,6 +192,11 @@ footer {
   padding-bottom: 1.4em;
 }
 
+.bookmark .bookmark-content > p > * {
+  display: block;
+  width: 100%;
+}
+
 .bookmark .bookmark-content p {
   margin-bottom: 1.2em;
 }
