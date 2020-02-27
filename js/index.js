@@ -28,7 +28,14 @@ function init(){
 function serializeJson(form){
   let rawData = new FormData(form);
   let parsed = {};
-  rawData.forEach((val, name) => parsed[name] = val);
+  rawData.forEach((val, name) => {
+
+    // sanitize the input
+    val = val.split('<').join('&lt;');
+    val = val.split('>').join('&gt;');
+
+    parsed[name] = val;
+  });
   return JSON.stringify(parsed);
 }
 
